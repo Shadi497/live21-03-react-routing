@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import instructors from "./data";
+import { BrowserRouter } from "react-router-dom";
 
 const theme = {
   black: "#282c34",
@@ -28,7 +29,9 @@ ReactDOM.render(
   <React.StrictMode>
     <GlobalStyle />
     <ThemeProvider theme={theme}>
-      <App instructors={instructors} />
+      <BrowserRouter>
+        <App instructors={instructors} />
+      </BrowserRouter>
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById("root")
